@@ -4,7 +4,7 @@ import { initialContext } from "./index";
 
 import { toggleInitialCell, getNextGeneration } from "utils/reducer";
 
-export default (state: any, action: any) => {
+const reducer = (state: any, action: any) => {
   let nextState;
 
   switch (action.type) {
@@ -77,3 +77,5 @@ export default (state: any, action: any) => {
 
   return nextState;
 };
+
+export default reducer
