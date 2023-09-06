@@ -3,11 +3,13 @@ import type { Cell } from "types";
 export function toggleInitialCell(activeCells: Array<Cell>, data: Cell) {
   const isActive = activeCells.find((c) => c.x === data.x && c.y === data.y);
   if (isActive) {
+    // If cell alive, remove from active cells list
     const newCells = activeCells.filter(
       (c) => !(c.x === data.x && c.y === data.y)
     );
     return newCells;
   } else {
+    // If cell dead, add to active cells list
     return [...activeCells, data];
   }
 }

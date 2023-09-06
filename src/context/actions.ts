@@ -1,3 +1,4 @@
+// Actions for state update
 const actions = {
   INIT_STATE: "INIT_STATE",
   TOGGLE_CELL: "TOGGLE_CELL",
@@ -9,6 +10,8 @@ const actions = {
 
 export default actions;
 
+
+// Functions to trigger state update
 export function initState(dispatch: any) {
   dispatch({ type: actions.INIT_STATE });
 }

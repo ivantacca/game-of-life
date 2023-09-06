@@ -16,6 +16,7 @@ import {
 import "./App.css";
 
 function App() {
+  // State is managed with a combination of useContext and useReducer
   const [state, dispatch] = useReducer(reducer, initialContext);
 
   useEffect(() => {
@@ -23,11 +24,14 @@ function App() {
   }, []);
 
   useEffect(() => {
+    // Automatcally go to next generation if play is pressed.
     if (state.started) {
       setTimeout(() => nextGeneration(dispatch), 300);
     }
   }, [state.cells.generation, state.started]);
 
+  
+  // Button commands
   const onStartClick = () => {
     startGeneration(dispatch);
   };
