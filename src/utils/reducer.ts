@@ -10,7 +10,6 @@ export function toggleInitialCell(activeCells: Array<Cell>, data: Cell) {
   } else {
     return [...activeCells, data];
   }
-  return activeCells;
 }
 
 export function getNextGeneration(aliveCells: Array<Cell>) {
