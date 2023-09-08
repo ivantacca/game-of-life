@@ -4,7 +4,7 @@ import Context from "context";
 
 export default function FileInput() {
   const [validFile, setValidFile] = useState(true);
-  const { state, dispatch } = useContext<any>(Context);
+  const { dispatch } = useContext<any>(Context);
 
   // Handle txt upload
   const handleFileUpload = (event: any) => {

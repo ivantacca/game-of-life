@@ -15,7 +15,7 @@ export default function Controller({
   onStopClick,
   onNextClick,
 }: controllerProps) {
-  const { state, dispatch } = useContext<any>(Context);
+  const { state } = useContext<any>(Context);
 
   return (
     <div className="flex gap-2 absolute bottom-10">

@@ -76,7 +76,9 @@ export function getInitialFromFile(data: any) {
   data.population_state.map((row: Array<any>, y: number) => {
     row.map((cell: string, x: number) => {
       if (cell === "*") aliveFromFile.push({ x, y });
+      return cell
     });
+    return row
   });
   return aliveFromFile;
 }
