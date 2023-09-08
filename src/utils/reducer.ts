@@ -70,3 +70,24 @@ export function getNextGeneration(aliveCells: Array<Cell>) {
   }
   return nextGeneration;
 }
+
+export function getInitialFromFile(data: any) {
+  let aliveFromFile: Array<Cell> = [];
+  data.population_state.map((row: Array<any>, y: number) => {
+    row.map((cell: string, x: number) => {
+      if (cell === "*") aliveFromFile.push({ x, y });
+    });
+  });
+  return aliveFromFile;
+}
+
+export function getAliveFromGeneration(cells: Array<Cell>, generation: number) {
+  if (!generation) return cells;
+  else {
+    let newGeneration = cells;
+    for (let g = 0; g < generation; g++) {
+      newGeneration = getNextGeneration(newGeneration);
+    }
+    return newGeneration;
+  }
+}

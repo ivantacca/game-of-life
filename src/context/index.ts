@@ -6,7 +6,8 @@ export const initialContext = {
         initial: [],
         alive: [],
         generation: 0
-    }
+    },
+    input: null
 }
 
 export default createContext({});
